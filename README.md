@@ -11,7 +11,7 @@ To install Terraform for the exercises, we recommend using a version manager suc
 
 On MacOS and Linux systems, you can install them with brew:
 
-`brew install tfswitch` or `brew install tfenv`
+`brew install warrensbox/tap/tfswitch` or `brew install tfenv`
 
 On Windows there is currently no widely adopted Terraform version manager. You can install a specific version `x.y.z` of Terraform with Chocolately:
 
