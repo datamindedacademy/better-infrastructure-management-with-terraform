@@ -1,4 +1,4 @@
-# aws-terraform-training
+# Better Infrastructure Management with Terraform on AWS 
 
 
 ## Getting started
