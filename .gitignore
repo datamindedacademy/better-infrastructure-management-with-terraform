@@ -1,0 +1,19 @@
+.DS_Store
+.idea
+
+tlizer/
+
+**/.terraform/
+student_info.tfvars
+
+# remove terraform lock to invoke version conflict on student branch
+**/.terraform.lock.hcl
+
+*terraform.tfstate*
+
+**/terraform.tfvars
+
+*.png
+*.svg
+
+**/data/
