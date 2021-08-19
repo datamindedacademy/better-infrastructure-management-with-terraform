@@ -7,4 +7,4 @@ making it more readable and hence more maintainable.
 ## Goal of this exercise
 
 In this exercise, you will clean up (yay!) someone else's mess. Separate the main.tf into separate files 
-in order to 
+in order to make the terraform codebase more readable for you and your colleagues.  
