@@ -22,6 +22,16 @@ resource "aws_vpc_endpoint" "s3" {
         Effect    = "Allow",
         Principal = "*"
         Action = [
+          "s3:ListAllMyBuckets",
+        ],
+        Resource = [
+          "arn:aws:s3:::*",
+        ]
+      },
+      {
+        Effect    = "Allow",
+        Principal = "*"
+        Action = [
           "s3:ListBucket",
           "s3:GetObject",
           "s3:PutObject"

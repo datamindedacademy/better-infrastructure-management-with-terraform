@@ -31,6 +31,16 @@ resource "aws_iam_role" "notebook_role" {
           Resource = [
           "arn:aws:s3:::*"]
         },
+        {
+          Action = [
+            "s3:*Object",
+          ]
+          Effect = "Allow"
+          Resource = [
+            aws_s3_bucket.notebook_bucket.arn,
+            "${aws_s3_bucket.notebook_bucket.arn}/*",
+          ]
+        },
       ]
     })
   }

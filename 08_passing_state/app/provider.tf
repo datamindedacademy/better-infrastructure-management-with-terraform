@@ -8,10 +8,10 @@ terraform {
   }
   backend "s3" {
     bucket         = "better-infrastructure-management-with-terraform"
-    key            = "remote_backend/terraform.tfstate"
+    key            = "passing_state/app/terraform.tfstate"
     region         = "eu-west-1"
     dynamodb_table = "app-state"
-    profile        = "academy"
+    encrypt        = "true"
   }
 }
 

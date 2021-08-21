@@ -37,6 +37,11 @@ resource "aws_s3_bucket_policy" "notebook_bucket_policy" {
           aws_s3_bucket.notebook_bucket.arn,
           "${aws_s3_bucket.notebook_bucket.arn}/*"
         ]
+        Condition = {
+          StringNotEquals = {
+            "aws:SourceVpc" = aws_vpc.main.id
+          },
+        }
       },
     ]
   })

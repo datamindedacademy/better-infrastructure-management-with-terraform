@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "better-infrastructure-management-with-terraform-${var.student_name}"
+  bucket = "better-infrastructure-management-with-terraform"
 
   versioning {
     enabled = true
@@ -40,5 +40,8 @@ resource "aws_dynamodb_table" "terraform_state_lock" {
   write_capacity = 1
   hash_key       = "LockID"
 
-  // TO DO: complete this resource block!
+  attribute {
+    name = "LockID"
+    type = "S"
+  }
 }
