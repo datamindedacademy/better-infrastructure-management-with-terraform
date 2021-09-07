@@ -47,7 +47,7 @@ Default output format [None]: json
 
 Some of the exercise require you to provide your name and id (which we will assign to you) to make sure that Terraform
 creates unique resources. You can enter your name and id in the `student_info.sh` file in the root of the repository.
-Then run `chmod+x student_info.sh && source ./student_info.sh` and Terraform will automatically use this info as input.
+Then run `chmod +x student_info.sh && source ./student_info.sh` and Terraform will automatically use this info as input.
 
 ## Ready... Set... Go!
 
