@@ -43,12 +43,6 @@ Default region name [None]: eu-west-1
 Default output format [None]: json
 ```
 
-## Configure your student information
-
-Some of the exercise require you to provide your name and id (which we will assign to you) to make sure that Terraform
-creates unique resources. You can enter your name and id in the `student_info.sh` file in the root of the repository.
-Then run `chmod +x student_info.sh && source ./student_info.sh` and Terraform will automatically use this info as input.
-
 ## Ready... Set... Go!
 
 You should now be able to start with the exercises. `cd` your way into the first exercise folder (`00_provider_config`), read the instructions in the `README.md` and try to write some Terraform code to solve the problem. Don't worrry, the majority of the code you can find or adapt from the [Terraform provider documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)! Good luck, and remember: `terrafrom init`, `terraform plan`, and `terrafrom apply` all the things! 

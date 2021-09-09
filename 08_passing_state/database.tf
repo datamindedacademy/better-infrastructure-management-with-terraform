@@ -3,7 +3,7 @@ resource "aws_db_instance" "postgresdb" {
   engine               = "postgres"
   engine_version       = "13.3"
   instance_class       = "db.t3.micro"
-  name                 = "postgres-db-${var.student_name}"
+  name                 = "postgres-db-${random_pet.name.id}"
   username             = var.username
   password             = var.password
   parameter_group_name = aws_db_parameter_group.education.name
@@ -18,4 +18,8 @@ resource "aws_db_parameter_group" "education" {
     name  = "log_connections"
     value = "1"
   }
+}
+
+resource "random_pet" "name" {
+  lenght = 6
 }

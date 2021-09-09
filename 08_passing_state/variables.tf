@@ -15,7 +15,3 @@ variable "server_port" {
   type        = string
   default     = 8080
 }
-
-variable "student_name" {
-  default = ""
-}

@@ -1,4 +1,4 @@
-# This code is only required for instructors to setup the terraform state S3 bucket and DynamoDB locking table
+# This code is only required if you want to setup your own terraform state S3 bucket and DynamoDB locking table
 terraform {
   required_version = "~> 1.0"
   required_providers {
@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "better-infrastructure-management-with-terraform-${var.student_name}"
+  bucket = "better-infrastructure-management-with-terraform-${random_integer.student_id.result}"
 
   versioning {
     enabled = true
@@ -41,4 +41,9 @@ resource "aws_dynamodb_table" "terraform_state_lock" {
   hash_key       = "LockID"
 
   // TO DO: complete this resource block!
+}
+
+resource "random_integer" "student_id" {
+  min = 0
+  max = 255
 }

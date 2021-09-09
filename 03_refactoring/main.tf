@@ -67,7 +67,7 @@ variable "student_name" {
   type = string
 }
 resource "aws_s3_bucket" "notebook_bucket" {
-  bucket = "better-infrastructure-management-sagemaker-notebook-bucket-${var.student_name}"
+  bucket = "sagemaker-notebook-bucket-${var.student_name}"
   acl    = "private"
 
   tags = {
@@ -129,18 +129,15 @@ resource "aws_security_group" "allow_tls" {
   }
 }
 
-variable "student_id" {
-  type = string
-}
 resource "aws_vpc" "main" {
-  cidr_block           = "10.${var.student_id}.0.0/24"
+  cidr_block           = "10.0.0.0/24"
   enable_dns_support   = true
   enable_dns_hostnames = true
 }
 
 resource "aws_subnet" "main" {
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = "10.${var.student_id}.0.0/28"
+  cidr_block              = "10.0.0.0/28"
   map_public_ip_on_launch = false
 }
 

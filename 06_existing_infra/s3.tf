@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "notebook_bucket" {
-  bucket = "dataminded-academy-course-data-${var.student_name}"
+  bucket = "dataminded-academy-course-data-${random_pet.name.id}"
   acl    = "private"
 
   tags = {
