@@ -14,7 +14,9 @@ instance with a security group attached to it. The module should have three inpu
 - one or multiple IP addresses that are allowed to connect over SSH to the secure notebook
 
 You don't have to create a new VPC, subnet or IAM role for the secure notebook; they have been created for you, 
-and their ID's / ARN's have been stored as SSM parameters, which you can read in as a data source with the following paths:
+and their ID's / ARN's have been stored as SSM parameters, which you can read in as a `data source` with the following paths:
 - /terraform_workshop/notebook_role
 - /terraform_workshop/notebook_vpc_id
 - /terraform_workshop/notebook_subnet_id
+
+An example of such a data source can be found in `secure_notebook/data_sources.tf`. You will have to add the remaining data sources, and then use these to configure the notebook and security group of the module. 
