@@ -12,5 +12,10 @@ github:
 tasks:
   - before: brew install warrensbox/tap/tfswitch && pip install awscli
     init: brew install warrensbox/tap/tfswitch && pip install awscli # runs during prebuild
-    command: tfswitch 1.0.2 && export PATH=/home/gitpod/bin:$PATH
+    command: tfswitch 1.0.2 && export PATH=/home/gitpod/bin:$PATH && export AWS_PROFILE=academy
+
+
+vscode:
+  extensions:
+    -  hashicorp.terraform
 
