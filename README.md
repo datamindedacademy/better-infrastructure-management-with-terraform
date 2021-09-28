@@ -1,5 +1,7 @@
 # Better Infrastructure Management with Terraform on AWS 
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jvanbuel/better-infrastructure-management-with-terraform)
+
 
 ## Getting started
 
@@ -7,6 +9,7 @@ You can do the exercise either on your local machine with your IDE of choice, or
 try out Gitpod, you can skip the Terraform installation step below. 
 
 ### Install Terraform 
+
 To install Terraform for the exercises, we recommend using a version manager such as tfswitch or tfenv.
 
 On MacOS and Linux systems, you can install them with brew:
@@ -21,9 +24,7 @@ For the exercises, we'll be using Terraform versions `>=1.0.0`
 
 ### Use Gitpod 
 
-Create a free Gitpod account at [gitpod.io](https://www.gitpod.io). You can then open the exercise repository in a cloud IDE via the following link:
-
-https://gitpod.io/#https://github.com/jvanbuel/better-infrastructure-management-with-terraform/tree/main
+Create a free Gitpod account at [gitpod.io](https://www.gitpod.io). You can then open the exercise repository in a cloud IDE via the badge under the header of this README.
 
 This will set up a preconfigured development environment for you, which includes both `tfswitch` and the `awscli`. 
 
