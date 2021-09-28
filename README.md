@@ -23,7 +23,7 @@ For the exercises, we'll be using Terraform versions `>=1.0.0`
 
 Create a free Gitpod account at [gitpod.io](https://www.gitpod.io). You can then open the exercise repository in a cloud IDE via the following link:
 
-https://gitpod.io/#https://github.com/datamindedbe/aws-terraform-training/tree/main
+https://gitpod.io/#https://github.com/jvanbuel/better-infrastructure-management-with-terraform/tree/main
 
 This will set up a preconfigured development environment for you, which includes both `tfswitch` and the `awscli`. 
 
