@@ -5,12 +5,12 @@
 
 ## Getting started
 
-You can do the exercise either on your local machine with your IDE of choice, or use a preconfigured Gitpod Cloud development environment (see below). If you'd like to
+You can do the exercises either on your local machine with your IDE of choice, or use a preconfigured Gitpod Cloud development environment (see below). If you'd like to
 try out Gitpod, you can skip the Terraform installation step below. 
 
 ### Install Terraform 
 
-To install Terraform for the exercises, we recommend using a version manager such as tfswitch or tfenv.
+To install Terraform, we recommend using a version manager such as tfswitch or tfenv.
 
 On MacOS and Linux systems, you can install them with brew:
 
@@ -46,6 +46,6 @@ Default output format [None]: json
 
 ## Ready... Set... Go!
 
-You should now be able to start with the exercises. `cd` your way into the first exercise folder (`00_provider_config`), read the instructions in the `README.md` and try to write some Terraform code to solve the problem. Don't worrry, the majority of the code you can find or adapt from the [Terraform provider documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)! Good luck, and remember: `terrafrom init`, `terraform plan`, and `terrafrom apply` all the things! 
+You should now be able to start with the exercises. `cd` your way into the first exercise folder (`00_provider_config`), read the instructions in the `README.md` and try to write some Terraform code to solve the problem. Don't worrry, the majority of the code you can find in or adapt from the [Terraform provider documentation](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)! Good luck, and remember: `terrafrom init`, `terraform plan`, and `terrafrom apply` all the things! 
 
 P.S.: Exercise `06_existing_infra` is by far the most difficult one. Feel free to skip it initially and come back to it at the end, in case there is still some time left. 
