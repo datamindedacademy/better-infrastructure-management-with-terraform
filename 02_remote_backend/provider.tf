@@ -7,7 +7,7 @@ terraform {
     }
   }
   backend "s3" {
-    // TO DO: configure this correctly
+    // TO DO: configure this correctly after setting up the remote backend
   }
 }
 
