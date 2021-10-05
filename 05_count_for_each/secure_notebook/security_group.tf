@@ -3,7 +3,7 @@ locals {
 }
 
 data "aws_ssm_parameter" "vpc_id" {
-  name = "/terraform_training/vpc_id"
+  name = "/terraform_workshop/notebook_vpc_id"
 }
 
 resource "aws_security_group" "allow_tls" {

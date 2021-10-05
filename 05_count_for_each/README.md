@@ -26,4 +26,6 @@ You should try to do this in three different ways:
 1. Use these lists in combination with the `count` argument to deploy the notebooks. What happens when you re-order the lists and apply again?
 2. Convert the lists into a map structure and use `for_each` instead. Why is this often a better solution than `count`?
 3. Create a yaml or csv file containing the notebook configuration information for each data scientist, and use 
-some of the [built-in functions](https://www.terraform.io/docs/language/functions/index.html) of Terraform to parse the file and 
+some of the [built-in functions](https://www.terraform.io/docs/language/functions/index.html) of Terraform to parse the file and create a succesful `terraform plan`. You don't need to apply the resources (think about the climate!).
+
+HINT: to debug reading in and transforming the data in your yaml/csv/txt file into a map or list, you can make use of the `terraform console`, which gives you an interactive REPL in which you can test HCL code. 

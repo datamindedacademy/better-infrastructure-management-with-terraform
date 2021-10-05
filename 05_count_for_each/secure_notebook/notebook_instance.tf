@@ -1,10 +1,10 @@
 
 data "aws_ssm_parameter" "iam_role" {
-  name = "/terraform_training/iam_role"
+  name = "/terraform_workshop/notebook_role"
 }
 
 data "aws_ssm_parameter" "subnet_id" {
-  name = "/terraform_training/iam_role"
+  name = "/terraform_workshop/notebook_subnet_id"
 }
 
 resource "aws_sagemaker_notebook_instance" "notebook-instance" {
