@@ -2,7 +2,7 @@
 
 module "secure_notebooks" {
   source        = "./secure_notebook"
-  ip_address    = []
-  notebook_name = ""
-  instance_type = ""
+  ip_address    = "1.1.1.1"
+  notebook_name = "single-notebook"
+  instance_type = "ml.t2.medium"
 }
