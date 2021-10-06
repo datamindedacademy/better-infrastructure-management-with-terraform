@@ -13,7 +13,7 @@ Terraform allows you to conditionally deploy infrastructure with its ternary con
 
 ## Goal of this exercise
 
-You will write a module from scratch containing infrastructure that you then should to deploy in a test and production environment. 
+You will write a module from scratch (or rather, from boilerplate) containing infrastructure that you then should to deploy in a test and production environment. 
 You can reuse some existing infrastructure (a VPC, subnet, security group and IAM role) via the ssm parameters defined in `module/ssm_parameters.tf`
 
 ### S3 bucket
