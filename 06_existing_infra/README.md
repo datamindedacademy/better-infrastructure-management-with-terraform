@@ -40,3 +40,5 @@ Students get access to some Terraform codes that deploys
 
 They should login via the AWS Console to their Notebook and try to access a blob in S3 (either with AWS CLI, or boto3)
 and validate the claim. They should then study the error message to start resolving the issue.
+
+!To make sure you have a state of your own, change `$YOURNAME` on line 12 of the `provider.tf` file to your own name!
