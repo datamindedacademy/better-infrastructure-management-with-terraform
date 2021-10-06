@@ -3,7 +3,7 @@ resource "aws_db_instance" "postgresdb" {
   engine               = "postgres"
   engine_version       = "13.3"
   instance_class       = "db.t3.micro"
-  name                 = "postgres-db-${random_pet.name.id}"
+  name                 = "postgres${random_integer.int.result}"
   username             = var.username
   password             = var.password
   parameter_group_name = aws_db_parameter_group.education.name
@@ -11,7 +11,7 @@ resource "aws_db_instance" "postgresdb" {
 }
 
 resource "aws_db_parameter_group" "education" {
-  name   = "education"
+  name   = "education${random_integer.int.result}"
   family = "postgres13"
 
   parameter {
@@ -20,6 +20,7 @@ resource "aws_db_parameter_group" "education" {
   }
 }
 
-resource "random_pet" "name" {
-  lenght = 6
+resource "random_integer" "int" {
+  min = 0
+  max = 1000
 }

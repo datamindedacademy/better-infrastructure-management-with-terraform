@@ -29,7 +29,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_security_group" "instance" {
-  name = "terraform-example-instance"
+  name = "terraform-example-instance-${random_integer.int.result}"
   ingress {
     from_port   = 0
     to_port     = 0
