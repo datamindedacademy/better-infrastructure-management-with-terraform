@@ -14,7 +14,7 @@ You're one of the infrastructure engineers in your firm. Last week, your colleag
 > the S3 bucket "dm-academy-course-data".
 
 Your colleague completed the request. But today you are notified that the end user cannot read the contents
-of `s3://dm-academy-course-data/trees.csv`. The notification did not contain the computer generated error message or
+of `s3://dm-academy-course-data-$yourPetName/data/trees.csv` (`yourPetName` is the random id that Terraform generates for you via the `random_pet` resource in the `random.tf` file.). The notification did not contain the computer generated error message or
 any other more helpful information.
 
 Your job is to investigate and resolve.
