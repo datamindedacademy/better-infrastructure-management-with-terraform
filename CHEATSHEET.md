@@ -9,7 +9,7 @@ This cheatsheet contains the most commonly used Hashicorp Configuration Language
 ### Data sources 
 Note that data sources, like resources, are objects that have attributes that contain the data you are likely interested in. As for resources, you can find the list of attributes of a data source in its [Terraform registry](https://registry.terraform.io/) entry. 
 
-```json
+```terraform
 data "cloud_data_source" "my_data_source" {
     arg1 = x
 }
@@ -21,7 +21,7 @@ Data sources have their own namespace, meaning that you can reference them as fo
 
 Modules are directories containing files with `.tf` prefixes, and can be instantiated in other modules as follows: 
 
-```json
+```terraform
 module "my_module" {
     source = "./my_module_folder"
     var1 = x
@@ -37,7 +37,7 @@ You can reference modules and the resources that they contain in a separate `mod
 ### Variables
 
 You can define variables as follows: 
-```json
+```terraform
 variable "my_variable" {
     type = list(string)
     default = ["Hello", "world!"]
@@ -49,7 +49,7 @@ They can be referenced via the `var` namespace as follows: `var.my_variable`. Ar
 
 You can define one or more `local` values in a `locals` scope:
 
-```json
+```terraform
 locals {
     my_first_local = "my_first_local_value"
     my_second_local = 42
@@ -62,7 +62,7 @@ and they can be referenced as follows: `local.my_first_local`. Notice that you d
 ### Outputs
 
 Outputs of a module can be defined as follows
-```json
+```terraform
 output "my_output" {
     value = "my_output_value"
 }
@@ -80,8 +80,7 @@ The `count` meta-argument expects an integer as its value, specifying the number
 
 Example:
 
-```json
-
+```terraform
 resource "cloud_resource" "my_resource" {
     count = 5
     name = "my-resource-${count.index}"
@@ -95,7 +94,7 @@ A more flexible iteration meta-argument is `for_each` which takes as an input a 
 
 Example:
 
-```json
+```terraform
 resource "cloud_resource" "my_resource" {
     for_each = {key1: "value1", key2: "value2"}
     name = each.key
@@ -119,7 +118,7 @@ Terraform allows you to conditionally define or instantiate things with its tern
 
 A very common usage pattern of the ternary operator in terraform is to combine it with the count meta-argument to optionally instantiate a resource/data source/module based on some `condition`:
 
-```json
+```terraform
 resource "cloud_resource" "my_resource" {
     count = if condition? 1: 0
 }
