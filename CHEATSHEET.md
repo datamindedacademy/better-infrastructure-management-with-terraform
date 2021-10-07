@@ -114,13 +114,13 @@ For other use cases, have a look at the official [HCL docs](https://www.terrafor
 --- 
 ## Conditional expressions 
 
-Terraform allows you to conditionally define or instantiate things with its ternary operator. The expression `if bool_expression? true_val: false_val` evaluates to `true_val` if the `bool_expression` is `true`, otherwise it evaluates to `false_val`. 
+Terraform allows you to conditionally define or instantiate things with its ternary operator. The expression `condition? true_val: false_val` evaluates to `true_val` if `condition` is an expression that evaluates to `true`, otherwise it evaluates to `false_val`. 
 
 A very common usage pattern of the ternary operator in terraform is to combine it with the count meta-argument to optionally instantiate a resource/data source/module based on some `condition`:
 
 ```terraform
 resource "cloud_resource" "my_resource" {
-    count = if condition? 1: 0
+    count = condition? 1: 0
 }
 ```
 This snippit only instantiates a `cloud_resource` when the `condition` evaluates to `true`. 
