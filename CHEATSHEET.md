@@ -29,7 +29,7 @@ module "my_module" {
     var3 = z
 }
 ```
-You can reference modules and the resources that they contain in a separate `module` namespace. E.g.: `module.my_module.my_module_resource.property` refers to the `property` attribute of the 
+You can reference modules and the resources that they contain in a separate `module` namespace. E.g.: `module.my_module.my_module_resource.property` refers to the `property` attribute of the `my_module_resource` in the `my_module` module. 
 
 ---
 ## Variables, locals and outputs
