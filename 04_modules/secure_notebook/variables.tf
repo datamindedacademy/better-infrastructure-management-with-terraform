@@ -1,4 +1,4 @@
-variable "ip_address" {
+variable "ip_addresses" {
   
 }
 
