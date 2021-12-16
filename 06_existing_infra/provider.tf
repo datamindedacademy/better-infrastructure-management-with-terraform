@@ -6,7 +6,7 @@ terraform {
       version = "~> 3.46.0"
     }
   }
-  // TODO: repleace $YOURNAME with your own name! 
+  // TODO: replace $YOURNAME with your own name! 
   backend "s3" {
     bucket  = "better-infrastructure-management-with-terraform"
     key     = "existing_infra/terraform-$YOURNAME.tfstate"
