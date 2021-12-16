@@ -13,15 +13,15 @@ Terraform allows you to conditionally deploy infrastructure with its ternary con
 
 ## Goal of this exercise
 
-You will write a module from scratch (or rather, from boilerplate) containing infrastructure that you then should to deploy in a test and production environment. 
+You will write a module from scratch (or rather, from boilerplate) containing infrastructure that you then should deploy in a test and production environment. 
 You can reuse some existing infrastructure (a VPC, subnet, security group and IAM role) via the ssm parameters defined in `module/ssm_parameters.tf`
 
 ### S3 bucket
 
-- we want to create and manage a KMS key to encrypt the data in our bucket only in production. For the test environment, 
+- we want to create and manage a KMS key to encrypt the data in our bucket *only* in production. For the test environment, 
 the AWS managed S3 key (or even AES256 encryption) will do just fine.
   
-- we want to enable versioning of S3 objects only in the production environment 
+- we want to enable versioning of S3 objects *only* in the production environment 
   
 - the production S3 bucket should only be accessible from the VPC subnets. For the test environment, access control can be less strict.
 We might want to upload public datasets to the bucket to train a ML model.
