@@ -21,3 +21,9 @@ This CI/CD pipeline should consist of four steps:
 You don't have to provide any AWS credentials or profiles; your instructor already configured those as 
 GitHub actions secrets for the remote repository. The CI/CD pipeline will use those secrets as environment variables,
 which Terraform automatically picks up. 
+
+**! IMPORTANT !**
+
+In order not to annoy the other participants, make sure that you either
+- cloned the repo, so that your pipeline is isolated from those of the other participants
+- create a new branch, copy and rename the `tf_cicd.yml`, and set the trigger branch to the name of your new branch instead of `main`, so that you have a unique pipeline that only gets triggered whenever you push your changes.
