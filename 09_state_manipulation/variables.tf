@@ -12,4 +12,5 @@ variable "notebook_name" {
 variable "ip_addresses" {
   type        = list(string)
   description = "ip addresses to which ingress traffic is limited"
+  default     = ["1.1.1.1", "2.2.2.2"]
 }

@@ -12,7 +12,7 @@ resource "aws_security_group" "allow_ssh" {
     description = "SSH from my IP"
     from_port   = 22
     to_port     = 22
-    protocol    = "ssh"
+    protocol    = "tcp"
     cidr_blocks = local.my_ip_cidr
   }
 
