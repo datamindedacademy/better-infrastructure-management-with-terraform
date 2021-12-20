@@ -8,6 +8,7 @@ resource "aws_db_instance" "postgresdb" {
   password             = var.password
   parameter_group_name = aws_db_parameter_group.education.name
   skip_final_snapshot  = true
+  db_subnet_group_name = aws_db_subnet_group.default.name
 }
 
 resource "aws_db_parameter_group" "education" {
@@ -23,4 +24,13 @@ resource "aws_db_parameter_group" "education" {
 resource "random_integer" "int" {
   min = 0
   max = 1000
+}
+
+resource "aws_db_subnet_group" "default" {
+  name       = "subnet_group${random_integer.int.result}"
+  subnet_ids = data.aws_subnet_ids.subnet_ids.ids
+}
+
+data "aws_subnet_ids" "subnet_ids" {
+  vpc_id = "vpc-008e2879"
 }
