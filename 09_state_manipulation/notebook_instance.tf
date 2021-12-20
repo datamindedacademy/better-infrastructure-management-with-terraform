@@ -7,10 +7,6 @@ resource "aws_sagemaker_notebook_instance" "notebook_instance" {
   security_groups        = [aws_security_group.allow_ssh.id]
   subnet_id              = data.aws_ssm_parameter.subnet_id.value
   direct_internet_access = "Disabled"
-
-  tags = {
-    CreatedBy = "Jan"
-  }
 }
 
 

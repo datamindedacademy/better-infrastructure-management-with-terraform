@@ -8,6 +8,3 @@ resource "aws_ssm_parameter" "first_resource" {
 }
 
 
-resource "random_pet" "name" {
-  length = 5
-}

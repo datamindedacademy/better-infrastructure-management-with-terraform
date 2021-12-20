@@ -7,7 +7,7 @@ data "aws_ssm_parameter" "vpc_id" {
 }
 
 resource "aws_security_group" "allow_tls" {
-  name        = "allow_tls"
+  name        = "allow_tls-${random_pet.name.id}"
   description = "Allow TLS inbound traffic"
   vpc_id      = data.aws_ssm_parameter.vpc_id.value
 
@@ -29,4 +29,8 @@ resource "aws_security_group" "allow_tls" {
   tags = {
     Name = "allow_tls"
   }
+}
+
+resource "random_pet" "name" {
+  length = 2
 }

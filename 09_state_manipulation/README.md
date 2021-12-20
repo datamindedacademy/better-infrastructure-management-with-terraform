@@ -24,4 +24,8 @@ from the start. More often than not, you will have to move code around, and rest
    organization, and has to run with zero downtime? Imagine for example that the notebook defined in `notebook.tf` is running a heavy ML training job for days on end.
    You want to refactor it together with the `security group.tf` and the networking `ssm_parameters.tf` config into a module ASAP, without having to wait for the training job to finish. 
    How can you do this? Apply the resources in this directory, and then migrate them to a new module.
+
+   **! IMPORTANT !**
+
+   Replace `$yourname` in the `provider.tf` backend config to your own name!
    

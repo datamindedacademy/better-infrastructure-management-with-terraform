@@ -6,10 +6,12 @@ terraform {
       version = "~> 3.46.0"
     }
   }
+  // TO DO: change $yourname by your own name!
   backend "s3" {
     bucket = "better-infrastructure-management-with-terraform"
-    key    = "state_manipulation/terraform.tfstate"
+    key    = "state_manipulation/$yourname/terraform.tfstate"
     region = "eu-west-1"
+    profile = "academy"
   }
 }
 
@@ -18,5 +20,4 @@ provider "aws" {
   region  = "eu-west-1"
   profile = "academy"
 }
-
 
