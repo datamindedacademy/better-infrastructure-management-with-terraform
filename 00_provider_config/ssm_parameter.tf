@@ -8,12 +8,5 @@ resource "aws_ssm_parameter" "first_resource" {
 }
 
 resource "random_pet" "name" {
-  length=2
-}
-
-
-provider "aws" {
-  # Configuration options
-  region = "eu-west-1"
-  profile = "academy"
+  length = 2
 }
