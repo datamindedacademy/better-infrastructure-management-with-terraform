@@ -1,5 +1,5 @@
 resource "aws_ssm_parameter" "ssm_param" {
-  name  = "/remote-backend/ssm-${random_pet.name.id}"
+  name  = "/terraform_workshop/remote_backend/ssm-${random_pet.name.id}"
   type  = "String"
   value = "Remote backends are awesome!"
 }
