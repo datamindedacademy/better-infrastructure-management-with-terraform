@@ -3,7 +3,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.46.0"
+      version = "~> 4.2"
     }
   }
   backend "s3" {
@@ -68,7 +68,6 @@ variable "student_name" {
 }
 resource "aws_s3_bucket" "notebook_bucket" {
   bucket = "sagemaker-notebook-bucket-${var.student_name}"
-  acl    = "private"
 
   tags = {
     Name        = "My bucket"

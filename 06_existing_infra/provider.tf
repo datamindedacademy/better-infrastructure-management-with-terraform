@@ -3,13 +3,13 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.46.0"
+      version = "~> 4.2"
     }
   }
   // TODO: replace $YOURNAME with your own name! 
   backend "s3" {
     bucket  = "better-infrastructure-management-with-terraform"
-    key     = "existing_infra/terraform-$YOURNAME.tfstate"
+    key     = "existing_infra/terraform-jan.tfstate"
     region  = "eu-west-1"
     profile = "academy"
   }

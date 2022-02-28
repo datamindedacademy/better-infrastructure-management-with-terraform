@@ -1,8 +1,10 @@
 resource "aws_instance" "app_instance" {
+  depends_on                  = [aws_security_group.instance]
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = "t2.micro"
   associate_public_ip_address = true
-  security_groups             = [aws_security_group.instance.name]
+  vpc_security_group_ids      = [aws_security_group.instance.id]
+  subnet_id                   = data.aws_subnet.db_subnet.id
   user_data                   = <<EOF
     #!/bin/bash
     db_address="${aws_db_instance.postgresdb.address}"
@@ -29,7 +31,8 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_security_group" "instance" {
-  name = "terraform-example-instance-${random_integer.int.result}"
+  name   = "terraform-example-instance-${random_integer.int.result}"
+  vpc_id = data.aws_vpc.default_vpc.id
   ingress {
     from_port   = 0
     to_port     = 0

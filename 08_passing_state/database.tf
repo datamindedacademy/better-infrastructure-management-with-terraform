@@ -3,7 +3,7 @@ resource "aws_db_instance" "postgresdb" {
   engine               = "postgres"
   engine_version       = "13.3"
   instance_class       = "db.t3.micro"
-  name                 = "postgres${random_integer.int.result}"
+  db_name              = "postgres${random_integer.int.result}"
   username             = var.username
   password             = var.password
   parameter_group_name = aws_db_parameter_group.education.name
@@ -28,9 +28,20 @@ resource "random_integer" "int" {
 
 resource "aws_db_subnet_group" "default" {
   name       = "subnet_group${random_integer.int.result}"
-  subnet_ids = data.aws_subnet_ids.subnet_ids.ids
+  subnet_ids = data.aws_subnets.subnets.ids
 }
 
-data "aws_subnet_ids" "subnet_ids" {
-  vpc_id = "vpc-008e2879"
+data "aws_subnets" "subnets" {
+  filter {
+    name   = "vpc-id"
+    values = [data.aws_vpc.default_vpc.id]
+  }
+}
+
+data "aws_vpc" "default_vpc" {
+}
+
+data "aws_subnet" "db_subnet" {
+  vpc_id            = data.aws_vpc.default_vpc.id
+  availability_zone = "eu-west-1b"
 }

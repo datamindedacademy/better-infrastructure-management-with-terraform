@@ -1,14 +1,12 @@
 resource "aws_s3_bucket" "notebook_bucket" {
   bucket = "dataminded-academy-course-data-${random_pet.name.id}"
-  acl    = "private"
-
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
 }
 
-resource "aws_s3_bucket_object" "object" {
+resource "aws_s3_bucket_acl" "bucket_acl" {
+  bucket = aws_s3_bucket.notebook_bucket.id
+  acl    = "private"
+}
+resource "aws_s3_object" "object" {
   bucket = aws_s3_bucket.notebook_bucket.id
   key    = "data/trees.csv"
   source = var.file_path
