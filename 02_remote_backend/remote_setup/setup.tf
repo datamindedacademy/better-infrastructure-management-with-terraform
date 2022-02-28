@@ -21,7 +21,7 @@ resource "aws_s3_bucket_versioning" "versioning_config" {
 }
 
 resource "aws_dynamodb_table" "terraform_state_lock" {
-  name           = "app-state-${random_integer.student_id.result}"
+  name           = "terraform-training-lock-${random_integer.student_id.result}"
   read_capacity  = 1
   write_capacity = 1
   hash_key       = "LockID"

@@ -2,7 +2,7 @@
 # Which version of the AWS provider? Which region?
 
 resource "aws_ssm_parameter" "first_resource" {
-  name  = "/provider-config/${terraform.workspace}-first-resource-${random_pet.name.id}"
+  name  = "/terraform_workshop/provider_config/${terraform.workspace}-first-resource-${random_pet.name.id}"
   type  = "String"
   value = "Hello Terraform!"
 }
