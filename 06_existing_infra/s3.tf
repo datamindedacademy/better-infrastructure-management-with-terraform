@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "notebook_bucket" {
-  bucket = "dataminded-academy-course-data-${random_pet.name.id}"
+  bucket = "better-infrastructure-management-with-terraform-${random_pet.name.id}"
 }
 
 resource "aws_s3_bucket_acl" "bucket_acl" {

@@ -12,4 +12,7 @@ terraform {
 provider "aws" {
   region  = "eu-west-1"
   profile = "academy"
+  assume_role {
+    role_arn = "arn:aws:iam::338791806049:role/exercise_04_role"
+  }
 }

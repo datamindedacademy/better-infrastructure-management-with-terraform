@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "environment_bucket" {
-
+  bucket = "better-infrastructure-management-with-terraform-${var.notebook_name}-${var.environment}"
 }
 
 resource "aws_s3_bucket_policy" "environment_bucket_policy" {

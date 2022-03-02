@@ -34,14 +34,15 @@ resource "aws_db_subnet_group" "default" {
 data "aws_subnets" "subnets" {
   filter {
     name   = "vpc-id"
-    values = [data.aws_vpc.default_vpc.id]
+    values = [data.aws_ssm_parameter.vpc_id.value]
   }
 }
 
-data "aws_vpc" "default_vpc" {
+data "aws_ssm_parameter" "vpc_id" {
+  name = "/terraform_workshop/notebook_vpc_id"
 }
 
 data "aws_subnet" "db_subnet" {
-  vpc_id            = data.aws_vpc.default_vpc.id
+  vpc_id            = data.aws_ssm_parameter.vpc_id.value
   availability_zone = "eu-west-1b"
 }

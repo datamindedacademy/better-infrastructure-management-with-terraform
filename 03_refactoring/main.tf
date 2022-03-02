@@ -17,10 +17,13 @@ terraform {
 provider "aws" {
   region  = "eu-west-1"
   profile = "academy"
+  assume_role {
+    role_arn = "arn:aws:iam::338791806049:role/exercise_03_role"
+  }
 }
 
 resource "aws_iam_role" "notebook_role" {
-  name = "test_role"
+  name = "sagemaker_notebook_role-${var.student_name}"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -67,7 +70,7 @@ variable "student_name" {
   type = string
 }
 resource "aws_s3_bucket" "notebook_bucket" {
-  bucket = "sagemaker-notebook-bucket-${var.student_name}"
+  bucket = "better-infrastructure-management-with-terraform-${var.student_name}"
 
   tags = {
     Name        = "My bucket"

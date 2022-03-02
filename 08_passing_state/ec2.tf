@@ -32,7 +32,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_security_group" "instance" {
   name   = "terraform-example-instance-${random_integer.int.result}"
-  vpc_id = data.aws_vpc.default_vpc.id
+  vpc_id = data.aws_ssm_parameter.vpc_id.value
   ingress {
     from_port   = 0
     to_port     = 0
