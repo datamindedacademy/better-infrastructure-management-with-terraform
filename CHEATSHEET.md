@@ -137,4 +137,4 @@ resource "cloud_resource" "my_resource" {
     count = condition? 1: 0
 }
 ```
-This snippit only instantiates a `cloud_resource` when the `condition` evaluates to `true`. 
+This snippet only instantiates a `cloud_resource` when the `condition` evaluates to `true`. 
