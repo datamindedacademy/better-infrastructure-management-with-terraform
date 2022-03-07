@@ -6,6 +6,20 @@ This cheatsheet contains the most commonly used Hashicorp Configuration Language
 
 ### Resources
 
+Resources are the most fundamental objects within HCL; they are the building blocks which you can use to build your infrastructure. Resources have input arguments that you use to configure them, and have output arguments or so-called attributes which you can use to configure other resources and create implicit dependencies. You use them as follows:
+
+```terraform
+resource "cloud_resource" "my_resource" {
+    arg1 = x
+}
+```
+
+Here you are creating an instance of a `cloud_resource` type resource (which should be documented in a provider doc), and you give it the name `my_resource` which you can use to refer to this instance in other parts of your code. Resources are namespaced by their type (note that this is an important difference with other Terraform types!). You can refer to an attribute of a resource (to configure another resource, or to use an `output`, see below) as follows:
+
+`cloud_resource.my_resource.property`
+
+This resolves into the `attribute` attribute of the `cloud_resource` type that you named `my_resource` in your code. 
+
 ### Data sources 
 Note that data sources, like resources, are objects that have attributes that contain the data you are likely interested in. As for resources, you can find the list of attributes of a data source in its [Terraform registry](https://registry.terraform.io/) entry. 
 
