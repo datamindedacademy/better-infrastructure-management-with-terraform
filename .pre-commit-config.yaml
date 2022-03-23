@@ -5,3 +5,9 @@ repos:
       - id: terraform-fmt
      # - id: terraform-validate
       - id: tflint
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.64.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+    hooks:
+    #  - id: terraform_tfsec
+      - id: terraform_docs
+      - id: checkov
