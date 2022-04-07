@@ -18,7 +18,7 @@ colleagues, their preferred instance type (some are more senior than others), an
 their instance: 
 
 - Users: ["Alice", "Bob", "Chris", "Diana", "Erin"]
-- Instance type: ["ml.t2.medium", "ml.p2.xlarge", "ml.t2.medium", "ml.t3.medium", "ml.t2.medium"]
+- Instance type: ["ml.t2.medium", "ml.m4.xlarge", "ml.t2.medium", "ml.t3.medium", "ml.t2.medium"]
 - IP: ["1.1.1.1", "1.1.1.2", "1.1.1.3", "1.1.1.4", "1.1.1.5"]
 
 You should try to do this in three different ways:

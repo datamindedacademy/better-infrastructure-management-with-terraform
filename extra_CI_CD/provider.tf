@@ -11,8 +11,12 @@ terraform {
     key            = "cicd/terraform.tfstate"
     dynamodb_table = "app-state"
     encrypt        = "true"
+    region         = "eu-west-1"
   }
 }
 
 # Configure the AWS Provider
-provider "aws" {}
+provider "aws" {
+  region = "eu-west-1"
+}
+
