@@ -18,10 +18,11 @@ Here you are creating an instance of a `cloud_resource` type resource (which sho
 
 `cloud_resource.my_resource.property`
 
-This resolves into the `attribute` attribute of the `cloud_resource` type that you named `my_resource` in your code. 
+This resolves into the `attribute` attribute of the `cloud_resource` type that you named `my_resource` in your code.
 
-### Data sources 
-Note that data sources, like resources, are objects that have attributes that contain the data you are likely interested in. As for resources, you can find the list of attributes of a data source in its [Terraform registry](https://registry.terraform.io/) entry. 
+### Data sources
+
+Note that data sources, like resources, are objects that have attributes that contain the data you are likely interested in. As for resources, you can find the list of attributes of a data source in its [Terraform registry](https://registry.terraform.io/) entry.
 
 ```terraform
 data "cloud_data_source" "my_data_source" {
@@ -29,11 +30,11 @@ data "cloud_data_source" "my_data_source" {
 }
 ```
 
-Data sources have their own namespace, meaning that you can reference them as follows: `data.cloud_data_source.my_data_source.property`, which extracts the `property` attribute of the `cloud_data_source` that is known to Terraform as `my_data_source`. 
+Data sources have their own namespace, meaning that you can reference them as follows: `data.cloud_data_source.my_data_source.property`, which extracts the `property` attribute of the `cloud_data_source` that is known to Terraform as `my_data_source`.
 
 ### Modules
 
-Modules are directories containing files with `.tf` prefixes, and can be instantiated in other modules as follows: 
+Modules are directories containing files with `.tf` prefixes, and can be instantiated in other modules as follows:
 
 ```terraform
 module "my_module" {
@@ -43,20 +44,24 @@ module "my_module" {
     var3 = z
 }
 ```
-You can reference modules and the outputs that they contain in a separate `module` namespace. E.g.: `module.my_module.my_module_output` refers to the `my_module_output` output defined in the module. 
+
+You can reference modules and the outputs that they contain in a separate `module` namespace. E.g.: `module.my_module.my_module_output` refers to the `my_module_output` output defined in the module.
 
 ---
+
 ## Variables, locals and outputs
 
 ### Variables
 
-You can define variables as follows: 
+You can define variables as follows:
+
 ```terraform
 variable "my_variable" {
     type = list(string)
     default = ["Hello", "world!"]
 }
 ```
+
 They can be referenced via the `var` namespace as follows: `var.my_variable`. Arguments such as `type` and `default` are optional. For a complete list of (optional) variable arguments, have a look at the [official docs](https://www.terraform.io/docs/language/values/variables.html).  
 
 ### Locals
@@ -72,25 +77,27 @@ locals {
 
 and they can be referenced as follows: `local.my_first_local`. Notice that you define them as `locals`, but the namespace they reside in is called `local` (without the extra 's').
 
-
 ### Outputs
 
 Outputs of a module can be defined as follows
+
 ```terraform
 output "my_output" {
     value = "my_output_value"
 }
 ```
-For root modules (i.e. the directory in which you run `terraform init/plan/apply`), the output values are printed to `stdout`. For nested modules you can refer to the output of that modules as e.g. `module.my_module.my_output`. 
 
---- 
+For root modules (i.e. the directory in which you run `terraform init/plan/apply`), the output values are printed to `stdout`. For nested modules you can refer to the output of that modules as e.g. `module.my_module.my_output`.
+
+---
+
 ## Iteration
 
 ### *over resources*
 
-####  Count 
+#### Count
 
-The `count` meta-argument expects an integer as its value, specifying the number of copies of an object you want to create. You can refer to the current iteration within the scope of the resource/data source/module you are creating by means of a `count` object, which has a `index` attribute. 
+The `count` meta-argument expects an integer as its value, specifying the number of copies of an object you want to create. You can refer to the current iteration within the scope of the resource/data source/module you are creating by means of a `count` object, which has a `index` attribute.
 
 Example:
 
@@ -104,7 +111,7 @@ resource "cloud_resource" "my_resource" {
 
 #### For each
 
-A more flexible iteration meta-argument is `for_each` which takes as an input a set, or a map (if you want to use a list, have a look at the `toset` function). You can refer to the keys and/or values in that set/map within the scope of the resource/data source/module you are creating with the `each` keyword. 
+A more flexible iteration meta-argument is `for_each` which takes as an input a set, or a map (if you want to use a list, have a look at the `toset` function). You can refer to the keys and/or values in that set/map within the scope of the resource/data source/module you are creating with the `each` keyword.
 
 Example:
 
@@ -117,18 +124,20 @@ resource "cloud_resource" "my_resource" {
 
 ```
 
-### *over iterables* 
+### *over iterables*
 
-### For 
+### For
+
 You can create new iterables (lists, sets, objects, maps) by iterating over another iterable with the `for` keyword. E.g.
-`[for s in var.list : upper(s)]` creates a new list by uppercasing the strings `s` in the variable `list`. 
+`[for s in var.list : upper(s)]` creates a new list by uppercasing the strings `s` in the variable `list`.
 
 For other use cases, have a look at the official [HCL docs](https://www.terraform.io/docs/language/expressions/for.html).
 
---- 
-## Conditional expressions 
+---
 
-Terraform allows you to conditionally define or instantiate things with its ternary operator. The expression `condition? true_val: false_val` evaluates to `true_val` if `condition` is an expression that evaluates to `true`, otherwise it evaluates to `false_val`. 
+## Conditional expressions
+
+Terraform allows you to conditionally define or instantiate things with its ternary operator. The expression `condition? true_val: false_val` evaluates to `true_val` if `condition` is an expression that evaluates to `true`, otherwise it evaluates to `false_val`.
 
 A very common usage pattern of the ternary operator in terraform is to combine it with the count meta-argument to optionally instantiate a resource/data source/module based on some `condition`:
 
@@ -137,4 +146,5 @@ resource "cloud_resource" "my_resource" {
     count = condition? 1: 0
 }
 ```
-This snippet only instantiates a `cloud_resource` when the `condition` evaluates to `true`. 
+
+This snippet only instantiates a `cloud_resource` when the `condition` evaluates to `true`.

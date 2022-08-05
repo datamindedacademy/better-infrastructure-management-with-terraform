@@ -20,12 +20,13 @@ any other more helpful information.
 Your job is to investigate and resolve.
 
 Before you start, brainstorm with the instructor:
+
 - what reasons can you think of that this could be happening?
 - for each reason, think of a method to verify and resolve.
 - what would you need to do as a last step to say that you're done?
 
 Then, actually start by applying the Terraform code. You can use the url in the output to open the Notebook
-Instance, or connect to it via the AWS Console. 
+Instance, or connect to it via the AWS Console.
 
 ## Background
 
