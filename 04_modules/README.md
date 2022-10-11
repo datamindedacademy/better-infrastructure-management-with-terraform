@@ -11,7 +11,7 @@ In this exercise you will create a `secure_notebook` module. A secure notebook i
 instance with a security group attached to it. The module should have three input parameters:
 
 - the name of the secure notebook
-- the instance type of the secure notebook
+- the instance type of the secure notebook (e.g. `ml.t2.medium` or `ml.t3.medium`)
 - one or multiple IP addresses that are allowed to connect over SSH to the secure notebook
 
 You don't have to create a new VPC, subnet or IAM role for the secure notebook; they have been created for you,
