@@ -1,6 +1,6 @@
 # Better Infrastructure Management with Terraform on AWS
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/jvanbuel/better-infrastructure-management-with-terraform)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/datamindedacademy/better-infrastructure-management-with-terraform)
 
 ## Getting started
 
